@@ -8,49 +8,56 @@ margin:0;
 height:100%;
 background:black;
 overflow:hidden;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
 }
 
 iframe{
-width:100vw;
-height:90vh;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
 border:none;
-}
-
-#credit{
-color:white;
-font-family:sans-serif;
-margin-top:8px;
-opacity:0.8;
 }
 
 #overlay{
 position:fixed;
 inset:0;
 display:flex;
+flex-direction:column;
 align-items:center;
 justify-content:center;
-color:white;
-font-family:sans-serif;
 background:black;
 z-index:10;
 cursor:pointer;
+font-family:sans-serif;
+text-align:center;
+}
+
+#title{
+color:white;
+font-size:5vw;
+font-weight:bold;
+}
+
+#credit{
+color:white;
+font-size:1.5vw;
+opacity:.7;
+margin-top:15px;
 }
 </style>
 </head>
 <body>
 
-<div id="overlay">CLICK TO START NYAN</div>
+<div id="overlay">
+  <div id="title">CLICK TO START NYAN</div>
+  <div id="credit">Made by Luni</div>
+</div>
 
 <iframe id="player"
 src="https://www.youtube.com/embed/2yJgwwDcgV8?autoplay=1&loop=1&playlist=2yJgwwDcgV8&controls=0&mute=1"
 allow="autoplay; fullscreen">
 </iframe>
-
-<div id="credit">Made by Luni</div>
 
 <script>
 const overlay=document.getElementById("overlay");
